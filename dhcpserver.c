@@ -549,7 +549,7 @@ main (int argc, char *argv[])
 
      server_sock.sin_family = AF_INET;
      server_sock.sin_addr.s_addr = htonl(INADDR_ANY);
-     server_sock.sin_port = ss->s_port;
+     server_sock.sin_port = htons(BOOTPS);
 
      if (bind(s, (struct sockaddr *) &server_sock, sizeof(server_sock)) == -1) {
          perror("server: bind()");
